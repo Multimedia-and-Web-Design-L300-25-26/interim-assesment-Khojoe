@@ -13,8 +13,8 @@ connectDB();
 
 // Middleware
 app.use(cors({
-    origin: 'http://localhost:5173', // Vite default port, change if necessary
-    credentials: true, // Allow cookies to be sent with requests
+    origin: [process.env.FRONTEND_URL, 'http://localhost:5173', 'http://localhost:5174'], 
+    credentials: true, 
 }));
 app.use(express.json());
 app.use(cookieParser());
