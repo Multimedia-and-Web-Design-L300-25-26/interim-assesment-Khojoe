@@ -12,12 +12,9 @@ const sendTokenResponse = (user, statusCode, res) => {
     const options = {
         expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // 30 days
         httpOnly: true,
+        sameSite: 'none',
+        secure: true
     };
-
-    // Note: If deployed, we might want to add 'secure: true' in production
-    if (process.env.NODE_ENV === 'production') {
-        options.secure = true;
-    }
 
     // Don't send password in response
     user.password = undefined;
