@@ -21,7 +21,7 @@ app.use(cookieParser());
 
 // Routes
 app.get('/api', (req, res) => {
-    res.json({ message: "Welcome to the Crypto App API!" });
+    res.send("Welcome to the Crypto App API!" );
 });
 app.use('/api/auth', authRoutes);
 app.use('/api/crypto', cryptoRoutes);
