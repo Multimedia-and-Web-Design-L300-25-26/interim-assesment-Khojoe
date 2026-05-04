@@ -20,6 +20,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Routes
+app.get('/', (req, res) => {
+    res.send("API is running!");
+});
 app.get('/api', (req, res) => {
     res.send("Welcome to the Crypto App API!" );
 });
